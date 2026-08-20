@@ -17,11 +17,26 @@
 - 登录状态保存在独立浏览器 profile（`data/profile`），首次登录一次即可。
 - 日志每次启动自动滚动到 `auto_join.log.1`，新日志从空文件开始；单个日志超过 1MB 会自动轮转，最多保留 3 份历史。
 
-## 快速开始（当然如果你只想要懒人操作）
 
-> 也可以直接下载 Release 里的 `EXG-AutoJoin.exe`，双击运行即可。
+## 1.安装
 
-### 图形界面（推荐）
+需要先安装 Python 3.10 或更高版本。
+
+```powershell
+# 必装：Python 依赖（Playwright 等）
+python -m pip install -r requirements.txt
+```
+
+如果电脑上没有 Chrome 也没有 Edge，才需要额外安装 Playwright 内置浏览器：
+
+```powershell
+python -m playwright install chromium
+```
+
+> 脚本默认 `--channel auto`：优先使用本机 Chrome，没有 Chrome 就尝试 Edge，都没有才用 Playwright 内置 Chromium。
+
+
+### 2.图形界面（推荐）
 
 推荐先生成桌面快捷方式，之后直接双击使用：
 
@@ -43,6 +58,12 @@ python .\auto_join.pyw
 - 监控指定服务器（输入服务器 ID 或地图名，如 `#7`、`孤注一掷`）
 
 点击“开始监控”后会在后台运行，日志写入 `logs\auto_join.log`。
+
+
+## 快速开始（当然如果你只想要懒人操作）
+
+> 也可以直接下载 Release 里的 `EXG-AutoJoin.exe`，双击运行即可。
+
 
 ### 命令行
 
@@ -66,22 +87,6 @@ python .\auto_join.py --target obj --dry-run
 python .\auto_join.py --target obj --reload-every 120
 ```
 
-## 安装
-
-需要先安装 Python 3.10 或更高版本。
-
-```powershell
-# 必装：Python 依赖（Playwright 等）
-python -m pip install -r requirements.txt
-```
-
-如果电脑上没有 Chrome 也没有 Edge，才需要额外安装 Playwright 内置浏览器：
-
-```powershell
-python -m playwright install chromium
-```
-
-> 脚本默认 `--channel auto`：优先使用本机 Chrome，没有 Chrome 就尝试 Edge，都没有才用 Playwright 内置 Chromium。
 
 ## 常用参数
 
