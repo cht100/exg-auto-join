@@ -62,7 +62,7 @@ python .\auto_join.pyw
 
 ## 快速开始（当然如果你只想要懒人操作）
 
-> 也可以直接下载 Release 里的 `EXG-AutoJoin.exe`，双击运行即可。
+> 也可以直接下载 Release 里的 `EXG-AutoJoin-Setup.exe`，双击安装即可。
 
 
 
