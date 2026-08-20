@@ -36,6 +36,8 @@ python -m playwright install chromium
 
 ## 快速开始
 
+> 也可以直接下载 Release 里的 `EXG-AutoJoin.exe`，双击运行即可，不需要安装 Python。
+
 ### 图形界面（推荐）
 
 推荐先生成桌面快捷方式，之后直接双击使用：

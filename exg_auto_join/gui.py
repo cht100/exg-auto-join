@@ -130,12 +130,15 @@ class LauncherApp:
         self.server_entry.configure(state="normal" if not is_auto else "disabled")
 
     def _build_args(self) -> list[str] | None:
-        cli = PROJECT_ROOT / "auto_join.py"
-        if not cli.exists():
-            messagebox.showerror("自动加入", f"找不到 CLI 脚本：\n{cli}", parent=self.root)
-            return None
-
-        args = [pythonw_path(), str(cli), "--post-click-wait", "60"]
+        if getattr(sys, "frozen", False):
+            # 打包成 exe 后，用同一个 exe 的“命令行模式”启动后台监控
+            args = [sys.executable, "--post-click-wait", "60"]
+        else:
+            cli = PROJECT_ROOT / "auto_join.py"
+            if not cli.exists():
+                messagebox.showerror("自动加入", f"找不到 CLI 脚本：\n{cli}", parent=self.root)
+                return None
+            args = [pythonw_path(), str(cli), "--post-click-wait", "60"]
 
         if self.mode.get() == "auto":
             targets = split_targets(self.targets.get())
