@@ -1,4 +1,6 @@
-# EXG 僵尸逃跑自动加入
+# exg‑auto‑join
+EXG 僵尸逃跑服务器自动加入 / 空位监控工具
+> EXG zombie escape server auto‑join / slot‑monitor tool
 
 一个轻量的浏览器自动化脚本：直接读取 EXG 服务器列表接口和页面 DOM，另开浏览器后台监控 **僵尸逃跑** 模式下的服务器，再也不用为挤不进obj而烦恼呐~（后台开着cs2，直接秒进，让你成为EXG最快的靓仔）
 
