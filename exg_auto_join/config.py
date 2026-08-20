@@ -1,21 +1,24 @@
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
 if getattr(sys, "frozen", False):
-    # PyInstaller 打包后：数据/日志放在 exe 同目录，资源从临时解包目录读取
+    # PyInstaller 打包后：exe 放哪都行，数据统一存到用户 AppData，真正做到“下载即用、不产生额外文件夹”
     PROJECT_ROOT = Path(sys.executable).resolve().parent
     RESOURCE_DIR = Path(getattr(sys, "_MEIPASS", PROJECT_ROOT))
+    DATA_ROOT = Path(os.environ.get("LOCALAPPDATA", Path.home())) / "EXG-AutoJoin"
 else:
     PROJECT_ROOT = Path(__file__).resolve().parents[1]
     RESOURCE_DIR = PROJECT_ROOT
+    DATA_ROOT = PROJECT_ROOT
 
 DEFAULT_URL = "https://darkrp.cn/servers"
 SERVER_LIST_API = "https://list.darkrp.cn:9000/ServerList/CurrentStatus"
 
-DEFAULT_PROFILE_DIR = PROJECT_ROOT / "data" / "profile"
-DEFAULT_LOG_DIR = PROJECT_ROOT / "logs"
+DEFAULT_PROFILE_DIR = DATA_ROOT / "data" / "profile"
+DEFAULT_LOG_DIR = DATA_ROOT / "logs"
 DEFAULT_LOG_FILE = DEFAULT_LOG_DIR / "auto_join.log"
 ICON_PATH = RESOURCE_DIR / "assets" / "darkrp.ico"
 
