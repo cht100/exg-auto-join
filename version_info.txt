@@ -1,0 +1,27 @@
+VSVersionInfo(
+  ffi=FixedFileInfo(
+    filevers=(1, 0, 0, 0),
+    prodvers=(1, 0, 0, 0),
+    mask=0x3f,
+    flags=0x0,
+    OS=0x40004,
+    fileType=0x1,
+    subtype=0x0,
+    date=(0, 0)
+  ),
+  kids=[
+    StringFileInfo([
+      StringTable('080404b0', [
+        StringStruct('CompanyName', 'cht100'),
+        StringStruct('FileDescription', 'EXG Zombie Escape Auto Join'),
+        StringStruct('FileVersion', '1.0.0'),
+        StringStruct('InternalName', 'EXG-AutoJoin'),
+        StringStruct('LegalCopyright', 'Copyright (c) 2026 cht100'),
+        StringStruct('OriginalFilename', 'EXG-AutoJoin.exe'),
+        StringStruct('ProductName', 'EXG Auto Join'),
+        StringStruct('ProductVersion', '1.0.0')
+      ])
+    ]),
+    VarFileInfo([VarStruct('Translation', [2052, 1200])])
+  ]
+)
