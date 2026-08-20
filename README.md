@@ -65,6 +65,8 @@ python .\auto_join.pyw
 > 也可以直接下载 Release 里的 `EXG-AutoJoin.exe`，双击运行即可。
 
 
+
+
 ### 命令行
 
 ```powershell
